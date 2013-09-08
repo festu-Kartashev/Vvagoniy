@@ -1,0 +1,50 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" loadImage="MyLoad" onLoad="OnLoad">
+<commands >
+<command enabled="false" idMso="FilePrintQuick"/>
+     <command enabled="false" idMso="PrintDialogAccess"/>
+     <command enabled="false" idMso="FilePrintPreview"/>
+     <command enabled="false" idMso="ApplicationOptionsDialog"/>
+     <command enabled="false" idMso="FileExit"/>
+ </commands >
+  <ribbon startFromScratch="true">
+    <tabs>
+        <tab idMso="TabCreate" visible = "true" />
+        <tab idMso="TabExternalData" visible = "true"/>
+        <tab idMso="TabCreate" visible = "true" />
+        <tab idMso="TabExternalData" visible = "true"/>
+
+
+<tab id="tabOtdelKadrov" label="Депо">
+	<group id="groupSearch"	label="Локомотивы">
+		<button id="buttonSrchFIO" label="Добавить вагон" size="large" image="srch_fio.bmp" onAction="XMLAddVagon" getEnabled="bAddVagon"/>	
+		<button id="buttonSrchStepen" label="Добавить вагон в ремонт" size="large" image="srch_zvanie.bmp" onAction="XMLAddRepair" getEnabled="bAddRepair"/>
+		<button id="buttonSrchPassport" label="Все вагоны" size="large" image="srch_passport.bmp" onAction="XMLAllVagon" getEnabled="bAllVagon"/>
+	</group>
+	<group id="groupPodrazdel" label="Сотрудники">
+		<button id="buttonUniversity" label="Все Бригады" size="large" image="university.bmp" onAction="XMLAllBand" getEnabled="bAllBand"/>
+		<button id="buttonInstitut" label="Все бригадиры" size="large" image="institut.bmp" onAction="XMLAllBander" getEnabled="bAllBander"/>
+		<button id="buttonKafedra" label="Поиск бригадира" size="large" image="kfdr.bmp" onAction="XMLSrchBander" getEnabled="bSrchBander"/>
+		<button id="buttonZvanie" label="Все работники" size="large" image="zvanie.bmp" onAction="XMLAllWorker" getEnabled="bAllWorker"/>
+			<button id="buttonNewSotrudnik" label="Поиск работника" size="large" image="add_sotr.bmp" onAction="XMLSrchWorker" getEnabled="bSrchWorker"/>
+	</group>
+	
+</tab>
+
+<tab id="tabNastroyki" label="Настройки">
+	<group id="groupAvtorizacia" label="Авторизация">
+		<menu id="menuUsers" label="Пользователи" size="large" image="users.bmp">
+				<button id="buttonUsersSpisok" label="Список пользователей" onAction="XMLUsersSpisok" getEnabled="bUsersSpisok"/>
+				<button id="buttonUsersAdd" label="Добавить пользователя" onAction="XMLUsersAdd" getEnabled="bUsersAdd"/>
+				<button id="buttonUsersChange" label="Сменить пользователя" onAction="XMLUsersChange"/>
+		</menu>
+		<button id="buttonEditProfile" label="Сменить пароль" size="large" image="editprofile.bmp" onAction="XMLEditProfile" getEnabled="bEditProfile"/>	
+	</group>
+	<group id="groupOther" label="Прочее">
+		<button id="buttonChangeFon" label="Изменить оформление" size="large" image="changefon.bmp" onAction="XMLChangeFon" getEnabled="bChangeFon"/>	
+		<button id="buttonExit" label="Выход" size="large" image="exit.bmp" onAction="XMLExit"/>	
+	</group>
+</tab>
+
+    </tabs>
+  </ribbon>
+</customUI>
